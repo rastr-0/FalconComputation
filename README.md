@@ -1,4 +1,5 @@
 # FalconComputation
+<img width="600" height="430" alt="image" src="https://github.com/user-attachments/assets/ec13c730-76a0-4a1d-85eb-e2ea0f5d6454" />
 
 A TCP server that accepts math and variable commands over a simple text protocol.
 Built in C++ as a learning project covering sockets, OOP, and session state.
