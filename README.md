@@ -1,4 +1,5 @@
 # FalconComputation
+<img width="600" height="430" alt="image" src="https://github.com/user-attachments/assets/ec13c730-76a0-4a1d-85eb-e2ea0f5d6454" />
 
 A TCP server that accepts math and variable commands over a simple text protocol.
 Built in C++ as a learning project covering sockets, OOP, and session state.
@@ -78,21 +79,6 @@ Each layer has one job. The server does sockets. The handler does protocol. Comm
 **`$variable` expansion** — any token starting with `$` is looked up in the session's variable store and its values are spliced into the argument list. This happens inside `ComputeCommand::resolveArgs()`, so all compute commands get it for free.
 
 **Capture form** — `SET x <- SORT $y` runs any registered command and stores its output as a variable. It goes through the registry, so it works with any command including ones added later.
-
----
-
-## Building and running
-
-```bash
-# Build
-make
-
-# Start the server
-./server
-
-# Connect (in another terminal)
-nc 127.0.0.1 5678
-```
 
 ---
 
