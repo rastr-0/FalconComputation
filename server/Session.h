@@ -7,11 +7,15 @@
 
 class CommandRegistry;  // forward declaration to avoid circular include
 
+
+// extra-layer for holding VariableStore and CommandRegistry in one class 
+//  for better isolation (e.g. passing one session object for Command execute() method, instead of both) 
+
 class Session {
-  VariableStore store_;
-  CommandRegistry& registry_;
+  VariableStore store_; // handler and storage for variables
+  CommandRegistry& registry_; // handler for commands 
 public:
-  explicit Session(CommandRegistry& registry); // ToDo: what is `explicit` keywork
+  explicit Session(CommandRegistry& registry);
 
   void set(const std::string& name, std::vector<double> values);
   std::vector<double> get(const std::string& name);   // throws UNDEFINED_VAR

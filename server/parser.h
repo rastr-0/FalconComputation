@@ -10,6 +10,8 @@ struct ParsedCommand {
   std::vector<std::string> args;
 };
 
+
+// stateless class for parsing the input from buffer
 class Parser {
 private:
   static std::string normalize(const std::string& name) {

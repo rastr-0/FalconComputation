@@ -11,7 +11,7 @@ class ProtocolHandler {
   // Using registry field here only because it "decouples" it a bit from session
   // though, registry that holds session is the same object
   CommandRegistry& registry_;
-  Session session_;
+  Session session_; // wrapper for VariableStore and CommandRegistry to pass both as one object 
   bool closed_ = false;
 public:
   explicit ProtocolHandler(CommandRegistry& registry);

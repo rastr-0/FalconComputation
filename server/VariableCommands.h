@@ -3,6 +3,8 @@
 
 #include "command.h"
 
+// all derived classes for working with variables
+
 class SetCommand : public Command {
 public:
   std::string name()        const override { return "SET"; }

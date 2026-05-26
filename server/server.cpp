@@ -53,7 +53,8 @@ void Server::run(CommandRegistry& registry) {
     if (client_sock < 0)
       continue;
 
-    ProtocolHandler handler(registry);
+    ProtocolHandler handler(registry); // creating ProtocolHandler whose task is to manage CommandRegistry and Session
+      // it's the only function is handle that takes buffer and returns ready response for client 
 
     while (true) {
       ssize_t bytes = receive_data();

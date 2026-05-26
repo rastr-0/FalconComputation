@@ -7,7 +7,7 @@
 
 int main() {
   try {
-    CommandRegistry registry;
+    CommandRegistry registry; // registry holds all commands as their name + unique_ptr in unordered_map
 
     // Compute commands
     registry.registerCommand(std::make_unique<MinCommand>());
@@ -33,8 +33,8 @@ int main() {
     registry.registerCommand(std::make_unique<QuitCommand>());
 
     Server server;
-    server.make_connection("127.0.0.1", 5678);
-    server.run(registry);
+    server.make_connection("127.0.0.1", 5678); // handles all the network stuff: creating, binding and listening on socket to listen on
+    server.run(registry); // main logic happens here
   } catch (const std::exception& e) {
     std::cerr << "Fatal: " << e.what() << "\n";
     return 1;

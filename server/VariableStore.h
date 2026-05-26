@@ -5,6 +5,8 @@
 #include <vector>
 #include <unordered_map>
 
+// class for storing session variables added by user; everyting stored in memory in unordered_map 
+
 class VariableStore {
   std::unordered_map<std::string, std::vector<double>> vars_;
 public:

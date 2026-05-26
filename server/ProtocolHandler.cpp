@@ -8,12 +8,13 @@ ProtocolHandler::ProtocolHandler(CommandRegistry& registry)
 
 std::string ProtocolHandler::handle(const std::string& rawMessage) {
   try {
-    ParsedCommand parsed = Parser::parse(rawMessage);
-    Command* cmd = registry_.lookup(parsed.name);
+    ParsedCommand parsed = Parser::parse(rawMessage); // ParsedCommand is essentially the name and arguments of the command
+
+    Command* cmd = registry_.lookup(parsed.name); // find the specific registered Command that was registered earlier in main_server
     if (!cmd)
       return "ERROR INVALID_COMMAND\n";
 
-    Result res = cmd->execute(parsed.args, session_);
+    Result res = cmd->execute(parsed.args, session_); // Result is essentially status + reason (if failed) + result of the operation
 
     if (res.should_close) {
       closed_ = true;

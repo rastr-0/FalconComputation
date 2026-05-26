@@ -26,6 +26,9 @@ inline std::string fmt(double d) {
   return oss.str();
 }
 
+
+// abstract base class for ComputeClass (from which are later derived all the command classes where we compute smth)
+// + from this class are also derived Quit and Help commands
 class Command {
 public:
   virtual ~Command() = default;
