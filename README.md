@@ -82,21 +82,6 @@ Each layer has one job. The server does sockets. The handler does protocol. Comm
 
 ---
 
-## Building and running
-
-```bash
-# Build
-make
-
-# Start the server
-./server
-
-# Connect (in another terminal)
-nc 127.0.0.1 5678
-```
-
----
-
 ## Project structure
 
 ```
